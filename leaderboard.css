@@ -1,0 +1,235 @@
+/* Basic table styling */
+.table {
+  width: 95%;
+  border-collapse: collapse;
+  margin: 25px auto;
+  font-size: 16px;
+  text-align: left;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Header styling */
+.table th {
+  background-color: #f8f9fa;
+  color: #495057;
+  padding: 15px 20px;
+  border-bottom: 2px solid #dee2e6;
+  text-align: left;
+}
+
+/* Row styling */
+.table td {
+  padding: 15px 20px;
+  border-bottom: 1px solid #e9ecef;
+  color: #212529;
+}
+
+/* Zebra striping for better readability */
+.table tbody tr:nth-of-type(even) {
+  background-color: #f8f9fa;
+}
+
+/* Human performance row styling */
+.human-row {
+  background-color: #e9ecef;
+  font-weight: 500;
+}
+
+.human-row .institution, .table .institution {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 5px 0;
+}
+
+.human-row a {
+  color: #1367a7;
+  text-decoration: none;
+}
+
+.human-row a:hover {
+  text-decoration: underline;
+}
+
+.random-row {
+  background-color: #f8f9fa;
+}
+
+/* Model row styling */
+.table .date {
+  font-size: 12px;
+  color: #888;
+  margin-top: 5px;
+}
+
+.table .institution {
+  font-size: 14px;
+  color: #888;
+  margin: 5px 0;
+}
+
+.table .model-id {
+  font-size: 12px;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  color: #6c757d;
+  margin: 5px 0;
+}
+
+.table .model-id a {
+  color: #888;
+  text-decoration: none;
+}
+
+.table .model-id a:hover {
+  color: #1367a7;
+  text-decoration: underline;
+}
+
+.table .model-source {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.table .variance {
+  font-size: 11px;
+  color: #888;
+}
+
+/* Bold text for performance metrics */
+.table td b {
+  font-weight: 600;
+  color: #000;
+}
+
+/* Tag styling */
+.table .tag {
+  display: inline-block;
+  padding: 4px 12px;
+  margin: 2px 2px;
+  color: white;
+  border-radius: 15px;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.table .train-tag {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.table .rag-tag {
+  background-color: #fd7e14;
+  color: #fff;
+}
+
+.table .open-tag {
+  background-color: #17a2b8;
+  color: #fff;
+}
+
+.table .think-tag {
+  background-color: #6f42c1;
+  color: #fff;
+}
+
+.sup-note {
+  vertical-align: super;
+  font-size: smaller;
+  color: brown;
+  font-weight: bold;
+  position: relative;
+}
+
+@media screen and (min-width: 513px) {
+  .sup-note {
+    cursor: help;
+  }
+  .sup-note:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    opacity: 0.8;
+  }
+}
+
+@media screen and (max-width: 512px) {
+  .table {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .table td {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  .human-row .institution,
+  .table .institution,
+  .table .model-source {
+    font-size: 12px;
+  }
+
+  .table .model-id,
+  .table .date,
+  .table .tag {
+    font-size: 10px;
+  }
+
+  .table .variance {
+    font-size: 9px;
+  }
+
+  .sup-note {
+    cursor: pointer;
+  }
+
+  .sup-note::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+
+  .sup-note:focus::after {
+    opacity: 0.8;
+    animation: show-hide 2s forwards;
+  }
+
+  .sup-note:focus {
+    outline: none;
+  }
+
+  @keyframes show-hide {
+    0%,
+    100% {
+      opacity: 0;
+    }
+    10%,
+    90% {
+      opacity: 0.8;
+    }
+  }
+}
