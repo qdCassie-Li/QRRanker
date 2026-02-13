@@ -51,8 +51,9 @@
             top: 0;
             z-index: 20;
             backdrop-filter: blur(12px);
-            background: linear-gradient(135deg, var(--hero-grad-start), var(--hero-grad-end));
-            border-bottom: none;
+            background: #ffffff;
+            border-bottom: 1px solid var(--border-light);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
         }
 
         .nav-inner {
@@ -67,7 +68,7 @@
             align-items: center;
             gap: 10px;
             font-weight: 600;
-            color: white;
+            color: var(--text-dark);
             font-size: 0.95rem;
         }
 
@@ -79,13 +80,13 @@
         }
 
         .nav-links a {
-            color: rgba(255, 255, 255, 0.85);
+            color: var(--text-muted);
             text-decoration: none;
             transition: color 0.2s;
         }
 
         .nav-links a:hover {
-            color: white;
+            color: var(--accent-blue);
         }
 
         /* Header */
@@ -550,7 +551,7 @@
     <div class="top-nav">
         <div class="container nav-inner">
             <div class="brand">
-                <img src="./img/WeChat_logo.svg" alt="WeChat AI" style="height: 46px; width: auto;">
+                <img src="./img/WeChat_logo.png" alt="WeChat AI" style="height: 46px; width: auto;">
                 <span>QRRanker</span>
             </div>
             <nav class="nav-links">
